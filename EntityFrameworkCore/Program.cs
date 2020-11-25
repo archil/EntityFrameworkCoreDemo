@@ -1,7 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EntityFrameworkCore.EntityTypeConfigurations;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 
 namespace EntityFrameworkCore
 {
@@ -9,15 +12,23 @@ namespace EntityFrameworkCore
     {
         static void Main(string[] args)
         {
+            using (var db = new BloggingDbContext())
+            {
+                var blogsCount = db.Blogs.Count();
+
+                Console.WriteLine($"There are {blogsCount} blogs in db");
+            }
         }
     }
 
     public class BloggingDbContext : DbContext
     {
+        public DbSet<Blog> Blogs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
+            modelBuilder.Entity<Person>();
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,21 +39,23 @@ namespace EntityFrameworkCore
 
     public class Person
     {
-        public int Id { get; set; }
+        public int PersonId { get; set; }
         public string Name { get; set; }
     }
 
     public class Car
     {
         public string LicencePlateNumber { get; set; }
+        public string Make { get; set; }
     }
 
     public class Blog
-    { 
+    {
         public int BlogId { get; set; }
         public string Url { get; set; }
-        public decimal Rating { get; set; }
+        public int Rating { get; set; }
         public string Author { get; set; }
+        public DateTime BlogDate { get; set; }
         public List<Post> Posts { get; set; }
     }
 
