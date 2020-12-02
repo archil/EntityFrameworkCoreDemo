@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkCore.EntityTypeConfigurations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,6 +24,8 @@ namespace EntityFrameworkCore
 
     public class BloggingDbContext : DbContext
     {
+        public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
+
         public DbSet<Blog> Blogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,6 +37,9 @@ namespace EntityFrameworkCore
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=.;database=BloggingDb;Integrated security=true;");
+
+            optionsBuilder.EnableSensitiveDataLogging(true);
+            optionsBuilder.UseLoggerFactory(MyLoggerFactory);
         }
     }
 
