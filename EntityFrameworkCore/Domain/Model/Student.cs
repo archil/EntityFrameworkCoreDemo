@@ -8,5 +8,6 @@ namespace LearningManagementSystem.Domain.Model
     {
         public int StudentId { get; set; }
         public string Name { get; set; }
+        public ICollection<StudentSubject> Subjects { get; set; }
     }
 }

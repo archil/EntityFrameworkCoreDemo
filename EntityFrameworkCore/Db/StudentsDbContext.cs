@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LearningManagementSystem.Domain.Model;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace EntityFrameworkCore.Db
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.;database=BloggingDb;Integrated security=true;");
+            optionsBuilder.UseSqlServer("server=.;database=LMS;Integrated security=true;");
 
             optionsBuilder.EnableSensitiveDataLogging(true);
             optionsBuilder.UseLoggerFactory(MyLoggerFactory);

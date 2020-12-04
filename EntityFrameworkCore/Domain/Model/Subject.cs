@@ -9,5 +9,6 @@ namespace LearningManagementSystem.Domain.Model
 
         public int SubjectId { get; set; }
         public string Name { get; set; }
+        public virtual ICollection<StudentSubject> Students { get; set; }
     }
 }
