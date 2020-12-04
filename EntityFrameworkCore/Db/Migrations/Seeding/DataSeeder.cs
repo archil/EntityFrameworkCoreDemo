@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LearningManagementSystem.Db.Migrations
+namespace LearningManagementSystem.Db.Migrations.Seeding
 {
     public class DataSeeder
     {

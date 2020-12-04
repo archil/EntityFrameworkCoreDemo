@@ -10,6 +10,7 @@ using System.Linq;
 using Microsoft.Extensions.Caching.Memory;
 using EntityFrameworkCore.Db;
 using LearningManagementSystem.Db.Migrations;
+using LearningManagementSystem.Db.Migrations.Seeding;
 
 namespace EntityFrameworkCore.Db
 {
