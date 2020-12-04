@@ -12,7 +12,7 @@ namespace EntityFrameworkCore
     {
         static void Main(string[] args)
         {
-
+            int iAge = 5;
         }
     }
 }

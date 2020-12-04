@@ -7,7 +7,6 @@ using System.Text;
 
 namespace EntityFrameworkCore.Db
 {
-
     public class StudentsDbContext : DbContext
     {
         public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
