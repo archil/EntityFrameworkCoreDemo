@@ -14,7 +14,7 @@ using LearningManagementSystem.Db.Migrations.Seeding;
 
 namespace EntityFrameworkCore.Db
 {
-    public class StudentsDbContext : DbContext
+    public class LMSDbContext : DbContext
     {
         public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
 

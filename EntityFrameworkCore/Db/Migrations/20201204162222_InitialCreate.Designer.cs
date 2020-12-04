@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LearningManagementSystem.Db.Migrations
 {
-    [DbContext(typeof(StudentsDbContext))]
+    [DbContext(typeof(LMSDbContext))]
     [Migration("20201204162222_InitialCreate")]
     partial class InitialCreate
     {

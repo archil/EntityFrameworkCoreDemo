@@ -6,7 +6,7 @@ namespace LearningManagementSystem.Domain.Services.Model
 {
     public class ImportResult
     {
-        public int SuccessfullyImported { get; set; }
+        public int Succeeded { get; set; }
         public int Failed { get; set; }
     }
 }

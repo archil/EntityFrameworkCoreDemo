@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LearningManagementSystem.Db.Migrations
 {
-    [DbContext(typeof(StudentsDbContext))]
+    [DbContext(typeof(LMSDbContext))]
     partial class StudentsDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
