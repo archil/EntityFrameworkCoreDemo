@@ -3,16 +3,17 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
 namespace EntityFrameworkCore
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            int iAge = 5;
+
         }
     }
 }
