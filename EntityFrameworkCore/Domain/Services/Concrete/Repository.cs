@@ -4,6 +4,7 @@ using LearningManagementSystem.Domain.Services.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LearningManagementSystem.Domain.Services.Concrete
@@ -19,7 +20,9 @@ namespace LearningManagementSystem.Domain.Services.Concrete
 
         public StudentSubject FindByStudentAndSubjectId(int studentId, int subjectId)
         {
-            return _dbContext.Set<StudentSubject>().Find(studentId, subjectId);
+            var result = _dbContext.Set<StudentSubject>().Find(studentId, subjectId);
+
+            return result;
         }
 
         public void Save(StudentSubject studentSubject)
